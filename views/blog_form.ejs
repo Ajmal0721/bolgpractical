@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    background-color: black;
+    color: blue;
+}
+
+h2, label, .btn-primary {
+    color: blue;
+}
+
+.form-control, .form-control-file, .btn-primary {
+    border-color: blue;
+}
+
+.form-control:focus, .form-control-file:focus, .btn-primary:focus {
+    box-shadow: 0 0 5px blue;
+}
+
+.btn-primary {
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-primary:hover {
+    background-color: #004080; /* Darker blue */
+    border-color: #004080;
+}
+
+    </style>
+</head>
+<body>
+  <%- include("../partials/navbar.ejs") -%>
+    <div class="container mt-5">
+        <h2 class="mb-4">Add New Item</h2>
+        <form action="/addBlog" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="author" name="author" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="dsc" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">File Upload</label>
+                <input type="file" class="form-control-file" id="file" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
